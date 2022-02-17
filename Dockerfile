@@ -14,7 +14,7 @@ RUN mvn -f /usr/src/app/pom.xml clean package -Djavax.net.ssl.trustStorePassword
 FROM openjdk:9-jre
 COPY --from=build /usr/src/app/target/*.jar /app.jar
 
-ENV JAVA_OPTS=""
+ENV JAVA_OPTS="-Xmx"
 ENV SERVER_PORT 8080
 
 EXPOSE ${SERVER_PORT}
@@ -22,4 +22,4 @@ EXPOSE ${SERVER_PORT}
 HEALTHCHECK --interval=10s --timeout=3s \
 CMD curl -v --fail http://localhost:${SERVER_PORT} || exit 1
 
-ENTRYPOINT [ "sh", "-c", "java -jar /app.jar" ]
+ENTRYPOINT [ "sh", "-c", "java $JAVA_OPTS -jar /app.jar" ]
