@@ -19,7 +19,7 @@ public class HandlingFormSubmissionApplication implements CommandLineRunner{
 	public void run(String... arg0) throws Exception {
 		// TODO Auto-generated method stub
 		
-		
+		System.out.println("************************Printing Environment Type************************");
 		System.out.println("******************"+envType+"************************");
 	}
 }
