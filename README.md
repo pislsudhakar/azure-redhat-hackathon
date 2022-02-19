@@ -1,2 +1,2 @@
 # azure-redhat-hackathon
-springboot application for registration form
+springboot application - registration form for azure redhat openshift hackathon
