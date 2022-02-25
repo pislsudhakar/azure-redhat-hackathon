@@ -8,3 +8,4 @@ Trigger2
 Trigger3
 trigger4
 trigger5
+trigger6
