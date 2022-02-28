@@ -11,7 +11,7 @@ RUN mvn -f /usr/src/app/pom.xml clean package -Djavax.net.ssl.trustStorePassword
 #
 # Image
 #
-FROM openjdk:9-jre
+FROM registry.access.redhat.com/ubi8/openjdk-11:latest
 COPY --from=build /usr/src/app/target/*.jar /app.jar
 
 ENV JAVA_OPTS=""
